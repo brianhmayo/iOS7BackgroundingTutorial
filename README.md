@@ -1,4 +1,5 @@
-iOS7BackgroundingTutorial
+iOS7 Backgrounding Tutorial
 =========================
 
-A sample service to support the iOS 7 backgrounding tutorial.
+This repo contains both the sample service and iOS App to go along with the blog post about the new 
+iOS 7 background features.
