@@ -111,8 +111,11 @@ var SampleApp = function() {
         };
         
         self.routes['/articles'] = function(req, res) {
+            var dateString = new Date().toISOString().
+                                       replace(/T/, ' ').
+                                       replace(/\..+/, '');
             res.setHeader('Content-Type', 'application/json');
-            res.send('{ "test" : "value" }');
+            res.send('{ "response" : "success", "articles" : [ { "title" : "an article", "description" : "this is an article", "date" : "' + dateString + '" } ] }');
         };
     };
 
