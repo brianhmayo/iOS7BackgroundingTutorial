@@ -110,7 +110,7 @@ var SampleApp = function() {
             res.send(self.cache_get('index.html') );
         };
         
-        self.routes['/articles' = function(req, res) {
+        self.routes['/articles'] = function(req, res) {
             res.setHeader('Content-Type', 'application/json');
             res.send('{ "test" : "value" }');
         };
