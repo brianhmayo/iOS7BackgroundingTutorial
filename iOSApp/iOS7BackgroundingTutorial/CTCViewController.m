@@ -42,7 +42,7 @@ CTCArticlesModel *_model;
     // first, clear out the highlighted cells due to the user refresh.
     [self clearHighlightingOnCells];
     
-    RefreshCompletionHandler completionBlock = ^(BOOL success, int articlesCount) {
+    RefreshCompletionHandler completionBlock = ^(BOOL success, NSInteger articlesCount) {
         if (success) {
             [weakSelf updateTableViewWithNewArticles:articlesCount];
         }
@@ -55,7 +55,7 @@ CTCArticlesModel *_model;
 
 - (void)clearHighlightingOnCells {
     // first, clear out the highlighted cells due to the user refresh.
-    int numberOfRows = [self.tableView numberOfRowsInSection:0];
+    NSInteger numberOfRows = [self.tableView numberOfRowsInSection:0];
     for (int rows=0; rows < numberOfRows; rows++) {
         UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:rows inSection:0]];
         cell.contentView.backgroundColor = [UIColor clearColor];
@@ -67,13 +67,13 @@ CTCArticlesModel *_model;
     CTCViewController *weakSelf = self;
     
     // first, clear out the highlighted cells due to the user refresh.
-    int numberOfRows = [self.tableView numberOfRowsInSection:0];
+    NSInteger numberOfRows = [self.tableView numberOfRowsInSection:0];
     for (int rows=0; rows < numberOfRows; rows++) {
         UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:rows inSection:0]];
         cell.contentView.backgroundColor = [UIColor clearColor];
     }
     
-    RefreshCompletionHandler completionBlock = ^(BOOL success, int articlesCount) {
+    RefreshCompletionHandler completionBlock = ^(BOOL success, NSInteger articlesCount) {
         if (success) {
             [weakSelf updateTableViewWithNewArticles:articlesCount];
         }
@@ -88,19 +88,24 @@ CTCArticlesModel *_model;
     [_model fetchNewArticlesWithCompletionBlock:completionBlock];
 }
 
-- (void)updateTableViewWithNewArticles:(int) newArticlesAcount {
-    if (newArticlesAcount > 0) {
-        for (int row = 0; row < newArticlesAcount; row++) {
+- (void)updateTableViewWithNewArticles:(NSInteger) newArticlesCount {
+    NSMutableArray *indexPathsToInsertInto = [[NSMutableArray alloc] init];
+    if (newArticlesCount > 0) {
+        for (int row = 0; row < newArticlesCount; row++) {
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:row inSection:0];
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.tableView beginUpdates];
-                [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationNone];
-                [self.tableView endUpdates];
-                UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-                cell.contentView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:204.0/255.0 alpha:.75];
-            });
+            [indexPathsToInsertInto addObject:indexPath];
         }
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView beginUpdates];
+            [self.tableView insertRowsAtIndexPaths:indexPathsToInsertInto withRowAnimation:UITableViewRowAnimationNone];
+            [self.tableView endUpdates];
+
+            for (NSIndexPath *indexPathOfNewlyInsertedCell in indexPathsToInsertInto) {
+                UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPathOfNewlyInsertedCell];
+                cell.contentView.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:204.0/255.0 alpha:.75];
+            }
+        });
     }
 }
 
