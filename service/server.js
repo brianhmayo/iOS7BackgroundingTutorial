@@ -3,6 +3,34 @@
 var express = require('express');
 var fs      = require('fs');
 
+function getArticle(dateString) {
+
+    return '{ "title" : "an article", "description" : "this is an article", "date" : "' + dateString + '" }';
+}
+
+function getArticles(date) {
+    var articles = "";
+
+    var dateString = date.toISOString().
+                                replace(/T/, ' ').
+                                replace(/\..+/, '');
+
+    var articleCount = date.getSeconds();
+    var articleCountString = articleCount.toString();
+    if (articleCountString.length > 1)
+        articleCountString = articleCountString[1];
+    else
+        articleCountString = articleCountString[0];
+        
+    articles = getArticle(dateString);
+    for (var i=1; i<Number(articleCountString); i++) {
+        articles = articles.concat(',');
+        articles = articles.concat(getArticle(dateString));
+    }
+    
+    return articles;
+}
+
 
 /**
  *  Define the sample application.
@@ -115,7 +143,12 @@ var SampleApp = function() {
                                        replace(/T/, ' ').
                                        replace(/\..+/, '');
             res.setHeader('Content-Type', 'application/json');
-            res.send('{ "response" : "success", "articles" : [ { "title" : "an article", "description" : "this is an article", "date" : "' + dateString + '" } ] }');
+            
+            var articles = getArticles(new Date());
+                        
+/**            res.send('{ "response" : "success", "articles" : [ { "title" : "an article", "description" : "this is an article", "date" : "' + dateString + '" } ] }'); */
+            
+            res.send('{ "response" : "success", "articles" : [ ' + articles + ' ] }');
         };
     };
 
