@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		072398F918031F9D00B31326 /* CTCArticlesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 072398F818031F9D00B31326 /* CTCArticlesModel.m */; };
+		072398FC180320AF00B31326 /* CTCArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 072398FB180320AF00B31326 /* CTCArticleModel.m */; };
+		07C5D7F31806E8B4002D522D /* CTCArticleFetchStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C5D7F21806E8B4002D522D /* CTCArticleFetchStrategy.m */; };
 		6C45A29717EDDED50025E888 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C45A29617EDDED50025E888 /* Foundation.framework */; };
 		6C45A29917EDDED50025E888 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C45A29817EDDED50025E888 /* CoreGraphics.framework */; };
 		6C45A29B17EDDED50025E888 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C45A29A17EDDED50025E888 /* UIKit.framework */; };
@@ -14,8 +17,7 @@
 		6C45A2A317EDDED50025E888 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C45A2A217EDDED50025E888 /* main.m */; };
 		6C45A2A717EDDED50025E888 /* CTCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C45A2A617EDDED50025E888 /* CTCAppDelegate.m */; };
 		6C45A2AA17EDDED50025E888 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C45A2A817EDDED50025E888 /* Main.storyboard */; };
-		6C45A2AD17EDDED50025E888 /* CTCFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C45A2AC17EDDED50025E888 /* CTCFirstViewController.m */; };
-		6C45A2B017EDDED50025E888 /* CTCSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C45A2AF17EDDED50025E888 /* CTCSecondViewController.m */; };
+		6C45A2AD17EDDED50025E888 /* CTCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C45A2AC17EDDED50025E888 /* CTCViewController.m */; };
 		6C45A2B217EDDED50025E888 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C45A2B117EDDED50025E888 /* Images.xcassets */; };
 		6C45A2B917EDDED50025E888 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C45A2B817EDDED50025E888 /* XCTest.framework */; };
 		6C45A2BA17EDDED50025E888 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C45A29617EDDED50025E888 /* Foundation.framework */; };
@@ -35,6 +37,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		072398F718031F9D00B31326 /* CTCArticlesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCArticlesModel.h; sourceTree = "<group>"; };
+		072398F818031F9D00B31326 /* CTCArticlesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCArticlesModel.m; sourceTree = "<group>"; };
+		072398FA180320AF00B31326 /* CTCArticleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCArticleModel.h; sourceTree = "<group>"; };
+		072398FB180320AF00B31326 /* CTCArticleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCArticleModel.m; sourceTree = "<group>"; };
+		07C5D7F11806E8B4002D522D /* CTCArticleFetchStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCArticleFetchStrategy.h; sourceTree = "<group>"; };
+		07C5D7F21806E8B4002D522D /* CTCArticleFetchStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCArticleFetchStrategy.m; sourceTree = "<group>"; };
 		6C45A29317EDDED50025E888 /* iOS7BackgroundingTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS7BackgroundingTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C45A29617EDDED50025E888 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6C45A29817EDDED50025E888 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -46,10 +54,8 @@
 		6C45A2A517EDDED50025E888 /* CTCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTCAppDelegate.h; sourceTree = "<group>"; };
 		6C45A2A617EDDED50025E888 /* CTCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTCAppDelegate.m; sourceTree = "<group>"; };
 		6C45A2A917EDDED50025E888 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6C45A2AB17EDDED50025E888 /* CTCFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTCFirstViewController.h; sourceTree = "<group>"; };
-		6C45A2AC17EDDED50025E888 /* CTCFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTCFirstViewController.m; sourceTree = "<group>"; };
-		6C45A2AE17EDDED50025E888 /* CTCSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTCSecondViewController.h; sourceTree = "<group>"; };
-		6C45A2AF17EDDED50025E888 /* CTCSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTCSecondViewController.m; sourceTree = "<group>"; };
+		6C45A2AB17EDDED50025E888 /* CTCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CTCViewController.h; sourceTree = "<group>"; };
+		6C45A2AC17EDDED50025E888 /* CTCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CTCViewController.m; sourceTree = "<group>"; };
 		6C45A2B117EDDED50025E888 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6C45A2B717EDDED50025E888 /* iOS7BackgroundingTutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS7BackgroundingTutorialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C45A2B817EDDED50025E888 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -82,6 +88,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		072398FD180320B500B31326 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				072398F718031F9D00B31326 /* CTCArticlesModel.h */,
+				072398F818031F9D00B31326 /* CTCArticlesModel.m */,
+				072398FA180320AF00B31326 /* CTCArticleModel.h */,
+				072398FB180320AF00B31326 /* CTCArticleModel.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		072398FE18032F9400B31326 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6C45A2AB17EDDED50025E888 /* CTCViewController.h */,
+				6C45A2AC17EDDED50025E888 /* CTCViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		07C5D7F01806E881002D522D /* Strategies */ = {
+			isa = PBXGroup;
+			children = (
+				07C5D7F11806E8B4002D522D /* CTCArticleFetchStrategy.h */,
+				07C5D7F21806E8B4002D522D /* CTCArticleFetchStrategy.m */,
+			);
+			name = Strategies;
+			sourceTree = "<group>";
+		};
 		6C45A28A17EDDED50025E888 = {
 			isa = PBXGroup;
 			children = (
@@ -118,10 +153,9 @@
 				6C45A2A517EDDED50025E888 /* CTCAppDelegate.h */,
 				6C45A2A617EDDED50025E888 /* CTCAppDelegate.m */,
 				6C45A2A817EDDED50025E888 /* Main.storyboard */,
-				6C45A2AB17EDDED50025E888 /* CTCFirstViewController.h */,
-				6C45A2AC17EDDED50025E888 /* CTCFirstViewController.m */,
-				6C45A2AE17EDDED50025E888 /* CTCSecondViewController.h */,
-				6C45A2AF17EDDED50025E888 /* CTCSecondViewController.m */,
+				072398FE18032F9400B31326 /* ViewControllers */,
+				072398FD180320B500B31326 /* Models */,
+				07C5D7F01806E881002D522D /* Strategies */,
 				6C45A2B117EDDED50025E888 /* Images.xcassets */,
 				6C45A29D17EDDED50025E888 /* Supporting Files */,
 			);
@@ -205,6 +239,13 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "CapTech Consulting";
 				TargetAttributes = {
+					6C45A29217EDDED50025E888 = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
 					6C45A2B617EDDED50025E888 = {
 						TestTargetID = 6C45A29217EDDED50025E888;
 					};
@@ -255,9 +296,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C45A2AD17EDDED50025E888 /* CTCFirstViewController.m in Sources */,
-				6C45A2B017EDDED50025E888 /* CTCSecondViewController.m in Sources */,
+				072398FC180320AF00B31326 /* CTCArticleModel.m in Sources */,
+				6C45A2AD17EDDED50025E888 /* CTCViewController.m in Sources */,
 				6C45A2A317EDDED50025E888 /* main.m in Sources */,
+				072398F918031F9D00B31326 /* CTCArticlesModel.m in Sources */,
+				07C5D7F31806E8B4002D522D /* CTCArticleFetchStrategy.m in Sources */,
 				6C45A2A717EDDED50025E888 /* CTCAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,6 +510,7 @@
 				6C45A2CA17EDDED50025E888 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6C45A2CB17EDDED50025E888 /* Build configuration list for PBXNativeTarget "iOS7BackgroundingTutorialTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +519,7 @@
 				6C45A2CD17EDDED50025E888 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CTCArticlesModel.h"
 
-@interface CTCFirstViewController : UIViewController
+@interface CTCViewController : UITableViewController
+
+- (void)updateArticlesWithCompletionHandler:(RefreshCompletionHandler)completionHandler;
 
 @end
